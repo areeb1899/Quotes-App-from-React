@@ -18,11 +18,11 @@ mongoose.connect(process.env.MONGO_URL)
 app.use(express.json());
 
 app.use(cors({
-    origin:['http://localhost:3000']
+    origin:['https://quotes-app-from-react.netlify.app/']
 }));
 
  
-app.get('/hello', (req, res) => {
+app.get('/', (req, res) => {
     res.status(200).json({ message: 'Hello from Quotes App server' });
 })
 
