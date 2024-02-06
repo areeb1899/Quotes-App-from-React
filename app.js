@@ -17,9 +17,7 @@ mongoose.connect(process.env.MONGO_URL)
 
 app.use(express.json());
 
-app.use(cors({
-    origin:['https://quotes-app-from-react.netlify.app/']
-}));
+app.use(cors());
 
  
 app.get('/', (req, res) => {
