@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 8000
 const mongoose = require('mongoose');
 // const seedDB = require('./seed');
 const quotesRoute=require('./apis/quotesRoutes')
@@ -28,10 +29,12 @@ app.get('/', (req, res) => {
 app.use(quotesRoute);
 
 
-const port = process.env.PORT || 8000
 
 
 app.listen(port, () => {
     console.log(`Server started:${port}`)
 })
 
+
+
+module.exports = app;
